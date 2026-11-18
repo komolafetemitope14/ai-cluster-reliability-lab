@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-server
+  namespace: default
+  labels:
+    app: inference-server
+    lab: service-connectivity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-server
+  template:
+    metadata:
+      labels:
+        app: inference-server
+        lab: service-connectivity
+    spec:
+      containers:
+        - name: inference
+          image: python:3.12-alpine
+          command:
+            - python
+            - -u
+            - -m
+            - http.server
+            - "8080"
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "32Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
