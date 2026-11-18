@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-crashloop
+  namespace: default
+  labels:
+    app: inference-crashloop
+    lab: crashloop-investigation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-crashloop
+  template:
+    metadata:
+      labels:
+        app: inference-crashloop
+    spec:
+      containers:
+        - name: inference
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              echo "Starting simulated AI inference service..."
+              echo "ERROR: MODEL_PATH environment variable is missing"
+              exit 1
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"

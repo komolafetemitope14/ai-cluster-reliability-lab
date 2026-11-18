@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-fixed
+  namespace: default
+  labels:
+    app: inference-fixed
+    lab: crashloop-recovery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-fixed
+  template:
+    metadata:
+      labels:
+        app: inference-fixed
+    spec:
+      containers:
+        - name: inference
+          image: busybox:1.36
+          env:
+            - name: MODEL_PATH
+              value: "/models/demo-model"
+          command:
+            - sh
+            - -c
+            - |
+              echo "Starting simulated AI inference service..."
+
+              if [ -z "$MODEL_PATH" ]; then
+                echo "ERROR: MODEL_PATH environment variable is missing"
+                exit 1
+              fi
+
+              echo "MODEL_PATH configured: $MODEL_PATH"
+              echo "Simulated AI inference service started successfully"
+
+              sleep 3600
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
