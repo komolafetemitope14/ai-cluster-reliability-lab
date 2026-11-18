@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-fixed
+  namespace: default
+  labels:
+    app: probe-demo
+    lab: health-probes
+spec:
+  restartPolicy: Always
+  containers:
+    - name: inference
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Starting simulated AI inference service"
+          echo "Loading simulated model..."
+          sleep 10
+          echo "Model loaded successfully" > /tmp/model-ready
+          echo "Inference service is ready"
+          sleep 3600
+      readinessProbe:
+        exec:
+          command:
+            - cat
+            - /tmp/model-ready
+        initialDelaySeconds: 3
+        periodSeconds: 5
+        failureThreshold: 2
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"

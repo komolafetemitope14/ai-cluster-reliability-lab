@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-failure
+  namespace: default
+  labels:
+    app: probe-demo
+    lab: health-probes
+spec:
+  restartPolicy: Always
+  containers:
+    - name: inference
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Starting simulated AI inference service"
+          echo "Application process is running"
+          sleep 3600
+      livenessProbe:
+        exec:
+          command:
+            - cat
+            - /tmp/service-healthy
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        failureThreshold: 3
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"
