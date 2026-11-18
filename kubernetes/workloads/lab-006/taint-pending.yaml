@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-pending
+  namespace: default
+  labels:
+    app: taint-demo
+    lab: scheduling-constraints
+spec:
+  restartPolicy: Never
+  containers:
+    - name: inference
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Starting simulated inference workload"
+          sleep 3600
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"

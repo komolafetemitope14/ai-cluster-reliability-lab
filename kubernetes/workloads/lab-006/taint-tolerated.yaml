@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-tolerated
+  namespace: default
+  labels:
+    app: taint-demo
+    lab: scheduling-constraints
+spec:
+  restartPolicy: Never
+  tolerations:
+    - key: reliability-lab
+      operator: Equal
+      value: restricted
+      effect: NoSchedule
+  containers:
+    - name: inference
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Starting simulated inference workload"
+          echo "Matching toleration configured"
+          echo "Successfully scheduled onto the tainted node"
+          sleep 3600
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"
