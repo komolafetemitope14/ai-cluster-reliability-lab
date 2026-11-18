@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: inference-oom
+  namespace: default
+  labels:
+    app: inference-oom
+    lab: memory-investigation
+spec:
+  restartPolicy: Always
+  containers:
+    - name: inference
+      image: python:3.12-alpine
+      command:
+        - python
+        - -u
+        - -c
+        - |
+          import time
+
+          print("Starting simulated AI inference memory test", flush=True)
+
+          allocations = []
+
+          while True:
+              allocations.append(bytearray(8 * 1024 * 1024))
+              print(
+                  f"Allocated approximately {len(allocations) * 8} MiB",
+                  flush=True
+              )
+              time.sleep(0.5)
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "32Mi"
+        limits:
+          cpu: "500m"
+          memory: "64Mi"
