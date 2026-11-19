@@ -1,0 +1,62 @@
+{
+  "lab": "LAB-012",
+  "timestamp_utc": "2026-11-19T18:56:48.777330+00:00",
+  "overall_status": "OK",
+  "checks": [
+    {
+      "component": "kubernetes",
+      "status": "OK",
+      "message": "All Kubernetes nodes Ready",
+      "details": {
+        "context": "kind-ai-reliability-lab",
+        "nodes": [
+          {
+            "name": "ai-reliability-lab-control-plane",
+            "ready": true
+          }
+        ]
+      }
+    },
+    {
+      "component": "slurm",
+      "status": "OK",
+      "message": "Slurm services and nodes healthy",
+      "details": {
+        "services": {
+          "munge": "active",
+          "slurmctld": "active",
+          "slurmd": "active"
+        },
+        "nodes": [
+          {
+            "name": "enianyole-ThinkPad-T480",
+            "state": "idle"
+          }
+        ]
+      }
+    },
+    {
+      "component": "prometheus",
+      "status": "OK",
+      "message": "Prometheus Ready; no firing or unhealthy alert rules",
+      "details": {
+        "ready": true,
+        "alert_count": 2,
+        "firing_alerts": [],
+        "unhealthy_rules": [],
+        "alerts": [
+          {
+            "name": "PrometheusTargetDown",
+            "state": "inactive",
+            "health": "ok"
+          },
+          {
+            "name": "Lab011SyntheticFailure",
+            "state": "inactive",
+            "health": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "lab": "LAB-012",
+  "timestamp_utc": "2026-11-19T19:00:05.761554+00:00",
+  "overall_status": "ERROR",
+  "checks": [
+    {
+      "component": "kubernetes",
+      "status": "OK",
+      "message": "All Kubernetes nodes Ready",
+      "details": {
+        "context": "kind-ai-reliability-lab",
+        "nodes": [
+          {
+            "name": "ai-reliability-lab-control-plane",
+            "ready": true
+          }
+        ]
+      }
+    },
+    {
+      "component": "slurm",
+      "status": "OK",
+      "message": "Slurm services and nodes healthy",
+      "details": {
+        "services": {
+          "munge": "active",
+          "slurmctld": "active",
+          "slurmd": "active"
+        },
+        "nodes": [
+          {
+            "name": "enianyole-ThinkPad-T480",
+            "state": "idle"
+          }
+        ]
+      }
+    },
+    {
+      "component": "prometheus",
+      "status": "ERROR",
+      "message": "Readiness check failed: <urlopen error [Errno 111] Connection refused>",
+      "details": {}
+    }
+  ]
+}

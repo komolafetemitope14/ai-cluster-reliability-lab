@@ -1,0 +1,14 @@
+test_healthy_node (test_diagnose.KubernetesTests.test_healthy_node) ... ok
+test_kubectl_failure (test_diagnose.KubernetesTests.test_kubectl_failure) ... ok
+test_not_ready_node (test_diagnose.KubernetesTests.test_not_ready_node) ... ok
+test_firing_alert (test_diagnose.PrometheusTests.test_firing_alert) ... ok
+test_healthy_alerts (test_diagnose.PrometheusTests.test_healthy_alerts) ... ok
+test_prometheus_unreachable (test_diagnose.PrometheusTests.test_prometheus_unreachable) ... ok
+test_down_node (test_diagnose.SlurmTests.test_down_node) ... ok
+test_healthy_slurm (test_diagnose.SlurmTests.test_healthy_slurm) ... ok
+test_inactive_service (test_diagnose.SlurmTests.test_inactive_service) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+OK
