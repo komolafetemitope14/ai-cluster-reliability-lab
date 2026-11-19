@@ -10,17 +10,17 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 
 ## Portfolio Progress
 
-**10 of 15 labs completed — 66.7%**
+**11 of 15 labs completed — 73.3%**
 
-![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-66.7%25-brightgreen)
+![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-73.3%25-brightgreen)
 
-**Completed phases:** 3 of 6
+**Completed phases:** 4 of 6
 
-**Current phase:** Phase 4 — Monitoring and Observability
+**Current phase:** Phase 5 — Reliability Automation
 
-**Latest completed lab:** LAB-010 — Prometheus and Grafana Monitoring
+**Latest completed lab:** LAB-011 — Alerting and Observability Troubleshooting
 
-**Next lab:** LAB-011 — Alerting and Observability Troubleshooting
+**Next lab:** LAB-012 — Python Diagnostic Automation
 
 ### Six-Phase Roadmap
 
@@ -29,10 +29,10 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 | 1 | Kubernetes Troubleshooting | LAB-001–004 | 4/4 | Completed |
 | 2 | Advanced Kubernetes Scheduling | LAB-005–007 | 3/3 | Completed |
 | 3 | Slurm / HPC | LAB-008–009 | 2/2 | Completed |
-| 4 | Monitoring and Observability | LAB-010–011 | 1/2 | In progress |
-| 5 | Reliability Automation | LAB-012–013 | 0/2 | Not started |
+| 4 | Monitoring and Observability | LAB-010–011 | 2/2 | Completed |
+| 5 | Reliability Automation | LAB-012–013 | 0/2 | In progress |
 | 6 | Customer Reliability and Capstone | LAB-014–015 | 0/2 | Not started |
-| **Total** | **AI Infrastructure Reliability** | **15 labs** | **10/15** | **66.7% complete** |
+| **Total** | **AI Infrastructure Reliability** | **15 labs** | **11/15** | **73.3% complete** |
 
 ---
 
@@ -51,6 +51,8 @@ The following labs have been implemented and published.
 | LAB-007 | Advanced Kubernetes Scheduling | [View LAB-007](incidents/LAB-007/README.md) | Completed |
 | LAB-008 | Slurm Batch Jobs and Queue Troubleshooting | [View LAB-008](labs/LAB-008-slurm-batch-jobs-and-queues/README.md) | Completed |
 | LAB-009 | Slurm Failures and Resource Allocation Troubleshooting | [View LAB-009](labs/LAB-009-slurm-failures-and-resource-allocation/README.md) | Completed |
+| LAB-010 | Prometheus and Grafana Monitoring | [View LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md) | Completed |
+| LAB-011 | Alerting and Observability Troubleshooting | [View LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md) | Completed |
 
 ---
 
@@ -58,8 +60,6 @@ The following labs have been implemented and published.
 
 | Lab | Planned Focus | Phase |
 |---|---|---|
-| LAB-010 | Prometheus and Grafana Monitoring | Monitoring and Observability |
-| LAB-011 | Alerting and Observability Troubleshooting | Monitoring and Observability |
 | LAB-012 | Python Diagnostic Automation | Reliability Automation |
 | LAB-013 | Bash Health Checks and Evidence Collection | Reliability Automation |
 | LAB-014 | Customer Incident Communication and Root Cause Analysis | Customer Reliability |
@@ -249,34 +249,38 @@ The retained evidence did not establish that the controller marked the node `DOW
 
 ## Phase 4 — Monitoring and Observability
 
-**Status: In progress**
+**Status: Completed**
 
 **Labs:** LAB-010 and LAB-011
 
-This phase will introduce monitoring and alerting for infrastructure reliability.
+This phase established Prometheus and Grafana monitoring in the existing kind Kubernetes cluster and demonstrated a controlled alerting incident.
 
 ### LAB-010 — Prometheus and Grafana Monitoring
 
-Planned objectives:
+LAB-010 implemented:
 
-- Introduce Prometheus metrics collection.
-- Deploy a resource-conscious monitoring stack.
-- Inspect infrastructure and Kubernetes metrics.
-- Build a Grafana dashboard.
-- Practice basic monitoring troubleshooting.
-- Document deployment, verification, and cleanup procedures.
+- Prometheus metrics collection and target health verification.
+- Kubernetes API server monitoring.
+- Grafana deployment and Prometheus datasource provisioning.
+- Metrics exploration through the Prometheus and Grafana interfaces.
+- Deployment configuration and troubleshooting documentation.
 
-The implementation will reuse the existing kind Kubernetes cluster.
+[Read LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md)
 
 ### LAB-011 — Alerting and Observability Troubleshooting
 
-Planned objectives:
+LAB-011 demonstrated:
 
-- Define actionable alerts.
-- Investigate monitoring failures.
-- Correlate alerts with infrastructure conditions.
-- Evaluate alert quality and operational usefulness.
-- Document alert investigation and response workflows.
+- Configuring and validating Prometheus alert rules.
+- Triggering a controlled synthetic alert and observing the Firing state.
+- Investigating Kubernetes ConfigMap propagation delays.
+- Restoring the healthy rule and reloading Prometheus without a pod restart.
+- Verifying both alerts returned to Inactive with rule health OK.
+- Collecting evidence and creating a reusable Bash health-check script.
+
+The experiment was synthetic; it did not involve a real infrastructure outage or Alertmanager notification delivery.
+
+[Read LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md)
 
 ---
 
@@ -395,7 +399,9 @@ ai-cluster-reliability-lab/
 │   └── LAB-007/
 ├── labs/
 │   ├── LAB-008-slurm-batch-jobs-and-queues/
-│   └── LAB-009-slurm-failures-and-resource-allocation/
+│   ├── LAB-009-slurm-failures-and-resource-allocation/
+│   ├── LAB-010-prometheus-and-grafana-monitoring/
+│   └── LAB-011-alerting-and-observability-troubleshooting/
 ├── scripts/
 │   └── slurm/
 │       └── lab-009/
@@ -454,15 +460,15 @@ Skills from upcoming labs will be demonstrated as those labs are completed.
 
 ## Current Milestone
 
-**Completed:** LAB-001 through LAB-009
+**Completed:** LAB-001 through LAB-011
 
-**Portfolio progress:** 10/15 labs — 66.7%
+**Portfolio progress:** 11/15 labs — 73.3%
 
-**Completed phases:** Kubernetes Troubleshooting, Advanced Kubernetes Scheduling, and Slurm/HPC Troubleshooting.
+**Completed phases:** Kubernetes Troubleshooting, Advanced Kubernetes Scheduling, Slurm/HPC Troubleshooting, and Monitoring and Observability.
 
-**Next implementation:** LAB-011 — Alerting and Observability Troubleshooting.
+**Next implementation:** LAB-012 — Python Diagnostic Automation.
 
-The remaining six labs will extend the portfolio into monitoring, automation, and customer reliability incident response.
+The remaining four labs will focus on reliability automation, customer incident communication, and the integrated capstone.
 
 ---
 
@@ -471,4 +477,3 @@ The remaining six labs will extend the portfolio into monitoring, automation, an
 **AI Cluster Reliability Lab**
 
 https://github.com/komolafetemitope14/ai-cluster-reliability-lab
-
