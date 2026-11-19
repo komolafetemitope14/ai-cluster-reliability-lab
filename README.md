@@ -10,17 +10,17 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 
 ## Portfolio Progress
 
-**11 of 15 labs completed — 73.3%**
+**12 of 15 labs completed — 80%**
 
-![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-73.3%25-brightgreen)
+![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-80%25-brightgreen)
 
 **Completed phases:** 4 of 6
 
 **Current phase:** Phase 5 — Reliability Automation
 
-**Latest completed lab:** LAB-011 — Alerting and Observability Troubleshooting
+**Latest completed lab:** LAB-012 — Python Diagnostic Automation
 
-**Next lab:** LAB-012 — Python Diagnostic Automation
+**Next lab:** LAB-013 — Bash Health Checks and Evidence Collection
 
 ### Six-Phase Roadmap
 
@@ -30,9 +30,9 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 | 2 | Advanced Kubernetes Scheduling | LAB-005–007 | 3/3 | Completed |
 | 3 | Slurm / HPC | LAB-008–009 | 2/2 | Completed |
 | 4 | Monitoring and Observability | LAB-010–011 | 2/2 | Completed |
-| 5 | Reliability Automation | LAB-012–013 | 0/2 | In progress |
+| 5 | Reliability Automation | LAB-012–013 | 1/2 | In progress |
 | 6 | Customer Reliability and Capstone | LAB-014–015 | 0/2 | Not started |
-| **Total** | **AI Infrastructure Reliability** | **15 labs** | **11/15** | **73.3% complete** |
+| **Total** | **AI Infrastructure Reliability** | **15 labs** | **12/15** | **80% complete** |
 
 ---
 
@@ -53,6 +53,7 @@ The following labs have been implemented and published.
 | LAB-009 | Slurm Failures and Resource Allocation Troubleshooting | [View LAB-009](labs/LAB-009-slurm-failures-and-resource-allocation/README.md) | Completed |
 | LAB-010 | Prometheus and Grafana Monitoring | [View LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md) | Completed |
 | LAB-011 | Alerting and Observability Troubleshooting | [View LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md) | Completed |
+| LAB-012 | Python Diagnostic Automation | [View LAB-012](labs/LAB-012-python-diagnostic-automation/README.md) | Completed |
 
 ---
 
@@ -60,7 +61,6 @@ The following labs have been implemented and published.
 
 | Lab | Planned Focus | Phase |
 |---|---|---|
-| LAB-012 | Python Diagnostic Automation | Reliability Automation |
 | LAB-013 | Bash Health Checks and Evidence Collection | Reliability Automation |
 | LAB-014 | Customer Incident Communication and Root Cause Analysis | Customer Reliability |
 | LAB-015 | Integrated AI Infrastructure Reliability Capstone | Capstone |
@@ -286,7 +286,7 @@ The experiment was synthetic; it did not involve a real infrastructure outage or
 
 ## Phase 5 — Reliability Automation
 
-**Status: Not started**
+**Status: In progress — 1 of 2 labs completed**
 
 **Labs:** LAB-012 and LAB-013
 
@@ -294,7 +294,9 @@ This phase will focus on reducing repetitive troubleshooting work.
 
 ### LAB-012 — Python Diagnostic Automation
 
-Planned work includes a reusable Python diagnostic tool for collecting and interpreting infrastructure information.
+Implemented a read-only Python diagnostic tool covering Kubernetes, Slurm, and Prometheus. The tool generates JSON reports, passed nine automated tests, and correctly detected a controlled monitoring connectivity failure.
+
+[Read LAB-012](labs/LAB-012-python-diagnostic-automation/README.md)
 
 ### LAB-013 — Bash Health Checks and Evidence Collection
 
@@ -401,7 +403,8 @@ ai-cluster-reliability-lab/
 │   ├── LAB-008-slurm-batch-jobs-and-queues/
 │   ├── LAB-009-slurm-failures-and-resource-allocation/
 │   ├── LAB-010-prometheus-and-grafana-monitoring/
-│   └── LAB-011-alerting-and-observability-troubleshooting/
+│   ├── LAB-011-alerting-and-observability-troubleshooting/
+│   └── LAB-012-python-diagnostic-automation/
 ├── scripts/
 │   └── slurm/
 │       └── lab-009/
@@ -460,15 +463,15 @@ Skills from upcoming labs will be demonstrated as those labs are completed.
 
 ## Current Milestone
 
-**Completed:** LAB-001 through LAB-011
+**Completed:** LAB-001 through LAB-012
 
-**Portfolio progress:** 11/15 labs — 73.3%
+**Portfolio progress:** 12/15 labs — 80%
 
 **Completed phases:** Kubernetes Troubleshooting, Advanced Kubernetes Scheduling, Slurm/HPC Troubleshooting, and Monitoring and Observability.
 
-**Next implementation:** LAB-012 — Python Diagnostic Automation.
+**Next implementation:** LAB-013 — Bash Health Checks and Evidence Collection.
 
-The remaining four labs will focus on reliability automation, customer incident communication, and the integrated capstone.
+The remaining three labs will complete reliability automation, customer incident communication, and the integrated capstone.
 
 ---
 
