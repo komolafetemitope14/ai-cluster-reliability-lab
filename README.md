@@ -10,17 +10,17 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 
 ## Portfolio Progress
 
-**9 of 15 labs completed — 60%**
+**10 of 15 labs completed — 66.7%**
 
-![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-60%25-brightgreen)
+![Portfolio Progress](https://img.shields.io/badge/Portfolio_Progress-66.7%25-brightgreen)
 
 **Completed phases:** 3 of 6
 
 **Current phase:** Phase 4 — Monitoring and Observability
 
-**Latest completed lab:** LAB-009 — Slurm Failures and Resource Allocation Troubleshooting
+**Latest completed lab:** LAB-010 — Prometheus and Grafana Monitoring
 
-**Next lab:** LAB-010 — Prometheus and Grafana Monitoring
+**Next lab:** LAB-011 — Alerting and Observability Troubleshooting
 
 ### Six-Phase Roadmap
 
@@ -29,10 +29,10 @@ This project demonstrates practical troubleshooting, incident diagnosis, recover
 | 1 | Kubernetes Troubleshooting | LAB-001–004 | 4/4 | Completed |
 | 2 | Advanced Kubernetes Scheduling | LAB-005–007 | 3/3 | Completed |
 | 3 | Slurm / HPC | LAB-008–009 | 2/2 | Completed |
-| 4 | Monitoring and Observability | LAB-010–011 | 0/2 | In progress |
+| 4 | Monitoring and Observability | LAB-010–011 | 1/2 | In progress |
 | 5 | Reliability Automation | LAB-012–013 | 0/2 | Not started |
 | 6 | Customer Reliability and Capstone | LAB-014–015 | 0/2 | Not started |
-| **Total** | **AI Infrastructure Reliability** | **15 labs** | **9/15** | **60% complete** |
+| **Total** | **AI Infrastructure Reliability** | **15 labs** | **10/15** | **66.7% complete** |
 
 ---
 
@@ -456,11 +456,11 @@ Skills from upcoming labs will be demonstrated as those labs are completed.
 
 **Completed:** LAB-001 through LAB-009
 
-**Portfolio progress:** 9/15 labs — 60%
+**Portfolio progress:** 10/15 labs — 66.7%
 
 **Completed phases:** Kubernetes Troubleshooting, Advanced Kubernetes Scheduling, and Slurm/HPC Troubleshooting.
 
-**Next implementation:** LAB-010 — Prometheus and Grafana Monitoring.
+**Next implementation:** LAB-011 — Alerting and Observability Troubleshooting.
 
 The remaining six labs will extend the portfolio into monitoring, automation, and customer reliability incident response.
 
