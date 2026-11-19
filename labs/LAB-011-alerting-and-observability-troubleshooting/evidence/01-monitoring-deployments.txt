@@ -1,0 +1,3 @@
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+grafana      1/1     1            1           8h
+prometheus   1/1     1            1           10h

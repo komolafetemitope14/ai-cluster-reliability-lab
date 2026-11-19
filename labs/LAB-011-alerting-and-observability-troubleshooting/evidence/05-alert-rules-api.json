@@ -1,0 +1,57 @@
+{
+    "status": "success",
+    "data": {
+        "groups": [
+            {
+                "name": "lab-011-reliability-alerts",
+                "file": "/etc/prometheus/rules/alerts.yml",
+                "rules": [
+                    {
+                        "state": "inactive",
+                        "name": "PrometheusTargetDown",
+                        "query": "up == 0",
+                        "duration": 60,
+                        "keepFiringFor": 0,
+                        "labels": {
+                            "lab": "lab-011",
+                            "severity": "critical"
+                        },
+                        "annotations": {
+                            "description": "Target {{ $labels.instance }} in job {{ $labels.job }} has been unreachable for at least one minute.",
+                            "summary": "Prometheus target is down"
+                        },
+                        "alerts": [],
+                        "health": "ok",
+                        "evaluationTime": 0.000474408,
+                        "lastEvaluation": "2026-11-19T18:46:36.220216977Z",
+                        "type": "alerting"
+                    },
+                    {
+                        "state": "inactive",
+                        "name": "Lab011SyntheticFailure",
+                        "query": "vector(0) == 1",
+                        "duration": 60,
+                        "keepFiringFor": 0,
+                        "labels": {
+                            "lab": "lab-011",
+                            "severity": "warning"
+                        },
+                        "annotations": {
+                            "description": "Synthetic failure condition has remained active for at least one minute.",
+                            "summary": "LAB-011 controlled alert simulation"
+                        },
+                        "alerts": [],
+                        "health": "ok",
+                        "evaluationTime": 0.000323058,
+                        "lastEvaluation": "2026-11-19T18:46:36.220712367Z",
+                        "type": "alerting"
+                    }
+                ],
+                "interval": 30,
+                "limit": 0,
+                "evaluationTime": 0.000869096,
+                "lastEvaluation": "2026-11-19T18:46:36.220174837Z"
+            }
+        ]
+    }
+}

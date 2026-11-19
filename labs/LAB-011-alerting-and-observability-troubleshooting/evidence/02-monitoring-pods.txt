@@ -1,0 +1,3 @@
+NAME                          READY   STATUS    RESTARTS   AGE
+grafana-596f55dbd9-8dzxb      1/1     Running   0          8h
+prometheus-76bc799ddb-lj54m   1/1     Running   0          30m

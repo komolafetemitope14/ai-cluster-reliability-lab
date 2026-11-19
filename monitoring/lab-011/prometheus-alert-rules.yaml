@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lab-011-alert-rules
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/part-of: lab-011
+data:
+  alerts.yml: |
+    groups:
+      - name: lab-011-reliability-alerts
+        interval: 30s
+        rules:
+          - alert: PrometheusTargetDown
+            expr: up == 0
+            for: 1m
+            labels:
+              severity: critical
+              lab: lab-011
+            annotations:
+              summary: "Prometheus target is down"
+              description: "Target {{ $labels.instance }} in job {{ $labels.job }} has been unreachable for at least one minute."
+
+          - alert: Lab011SyntheticFailure
+            expr: vector(0) == 1
+            for: 1m
+            labels:
+              severity: warning
+              lab: lab-011
+            annotations:
+              summary: "LAB-011 controlled alert simulation"
+              description: "Synthetic failure condition has remained active for at least one minute."

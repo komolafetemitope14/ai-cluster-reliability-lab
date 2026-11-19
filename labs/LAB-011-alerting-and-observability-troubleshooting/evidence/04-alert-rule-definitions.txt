@@ -1,0 +1,6 @@
+      - alert: PrometheusTargetDown
+        expr: up == 0
+        for: 1m
+      - alert: Lab011SyntheticFailure
+        expr: vector(0) == 1
+        for: 1m
