@@ -1,0 +1,5 @@
+LAB-013 Collection Summary
+Timestamp (UTC): 20261119T191604Z
+Successful captures: 13
+Failed captures: 0
+Overall status: PASS

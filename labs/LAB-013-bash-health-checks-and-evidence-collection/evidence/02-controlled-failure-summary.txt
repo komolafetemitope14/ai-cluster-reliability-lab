@@ -1,0 +1,5 @@
+LAB-013 Collection Summary
+Timestamp (UTC): 20261119T191911Z
+Successful captures: 9
+Failed captures: 4
+Overall status: WARNING

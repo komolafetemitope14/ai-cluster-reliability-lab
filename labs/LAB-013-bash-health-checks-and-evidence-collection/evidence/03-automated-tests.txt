@@ -1,0 +1,19 @@
+=== LAB-013 Automated Tests ===
+
+=== Static validation ===
+PASS: Valid Bash syntax: check-infrastructure-health.sh
+PASS: Valid Bash syntax: collect-incident-evidence.sh
+PASS: Correct shebang: check-infrastructure-health.sh
+PASS: Correct shebang: collect-incident-evidence.sh
+
+=== Healthy infrastructure test ===
+PASS: Healthy infrastructure returns exit code 0
+
+=== Controlled failure test ===
+PASS: Unreachable Prometheus returns exit code 1
+PASS: Failure output identifies Prometheus
+
+=== Test summary ===
+Passed tests: 7
+Failed tests: 0
+Overall test result: PASS
