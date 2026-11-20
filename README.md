@@ -1,340 +1,321 @@
-AI Cluster Reliability Lab
-A hands-on, 15-lab portfolio focused on Customer Reliability Engineering for AI Infrastructure, covering Kubernetes troubleshooting, GPU scheduling concepts, Slurm/HPC workload management, monitoring, automation, and customer-facing incident response.
+# AI Cluster Reliability Lab
 
-This project demonstrates practical troubleshooting, incident diagnosis, recovery, and operational documentation using a local Linux-based lab environment.
+**A hands-on, 15-lab engineering portfolio focused on Customer Reliability Engineering for AI Infrastructure.**
 
-GitHub: https://github.com/komolafetemitope14/ai-cluster-reliability-lab
-Portfolio Progress
-13 of 15 labs completed — 86.7%
+This project demonstrates practical infrastructure troubleshooting, workload scheduling, monitoring, automation, incident investigation, and customer communication using a local Linux-based lab environment.
 
-Completed phases: 5 of 6
+**Project status: 15/15 labs completed | 6/6 phases completed**
 
-Current phase: Phase 6 — Customer Reliability and Capstone
+## Project Overview
 
-Latest completed lab: LAB-013 — Bash Health Checks and Evidence Collection
+The AI Cluster Reliability Lab is a collection of 15 documented engineering exercises designed to develop and demonstrate skills relevant to AI Infrastructure Reliability and Customer Reliability Engineering.
 
-Next lab: LAB-014 — Customer Incident Communication and Root Cause Analysis
-Six-Phase Roadmap
-Phase	Focus Area	Labs	Progress	Status
-1	Kubernetes Troubleshooting	LAB-001–004	4/4	Completed
-2	Advanced Kubernetes Scheduling	LAB-005–007	3/3	Completed
-3	Slurm / HPC	LAB-008–009	2/2	Completed
-4	Monitoring and Observability	LAB-010–011	2/2	Completed
-5	Reliability Automation	LAB-012–013	2/2	Completed
-6	Customer Reliability and Capstone	LAB-014–015	0/2	Not started
-Total	AI Infrastructure Reliability	15 labs	13/15	86.7% complete
+The project covers:
 
+- Kubernetes workload troubleshooting and scheduling.
+- Slurm/HPC batch processing and resource management.
+- Prometheus monitoring and alerting.
+- Grafana metrics visualization.
+- Python and Bash diagnostic automation.
+- Evidence-based incident investigation and root cause analysis.
+- Customer-facing incident communication.
 
-Completed Labs
-The following labs have been implemented and published.
-Lab	Focus	Documentation	Status
-LAB-001	Kubernetes Troubleshooting	[View LAB-001](incidents/LAB-001/README.md)	Completed
-LAB-002	Kubernetes Troubleshooting	[View LAB-002](incidents/LAB-002/README.md)	Completed
-LAB-003	Kubernetes Troubleshooting	[View LAB-003](incidents/LAB-003/README.md)	Completed
-LAB-004	Kubernetes Troubleshooting	[View LAB-004](incidents/LAB-004/README.md)	Completed
-LAB-005	Advanced Kubernetes Scheduling	[View LAB-005](incidents/LAB-005/README.md)	Completed
-LAB-006	Advanced Kubernetes Scheduling	[View LAB-006](incidents/LAB-006/README.md)	Completed
-LAB-007	Advanced Kubernetes Scheduling	[View LAB-007](incidents/LAB-007/README.md)	Completed
-LAB-008	Slurm Batch Jobs and Queue Troubleshooting	[View LAB-008](labs/LAB-008-slurm-batch-jobs-and-queues/README.md)	Completed
-LAB-009	Slurm Failures and Resource Allocation Troubleshooting	[View LAB-009](labs/LAB-009-slurm-failures-and-resource-allocation/README.md)	Completed
-LAB-010	Prometheus and Grafana Monitoring	[View LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md)	Completed
-LAB-011	Alerting and Observability Troubleshooting	[View LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md)	Completed
-LAB-012	Python Diagnostic Automation	[View LAB-012](labs/LAB-012-python-diagnostic-automation/README.md)	Completed
-LAB-013	Bash Health Checks and Evidence Collection	[View LAB-013](labs/LAB-013-bash-health-checks-and-evidence-collection/README.md)	Completed
+All exercises were performed in a controlled, local training environment. GPU scheduling concepts were explored without physical NVIDIA GPU hardware.
 
+## Infrastructure Architecture
 
-Upcoming Labs
-Lab	Planned Focus	Phase
-LAB-014	Customer Incident Communication and Root Cause Analysis	Customer Reliability
-LAB-015	Integrated AI Infrastructure Reliability Capstone	Capstone
+The following diagram illustrates the main components of the local infrastructure and how they support reliability investigation, monitoring, automation, and evidence collection.
 
+![AI Cluster Reliability Lab Infrastructure Architecture](assets/infrastructure-architecture.png)
 
-The upcoming labs are planned work and are not yet implemented.
-Technical Environment
-The portfolio is developed using a local CPU-only infrastructure environment.
-Workstation
-- Hardware: Lenovo ThinkPad T480
-- Operating system: Ubuntu Linux
-- Processor: Intel Core i7-8550U
-- Logical CPUs: 8
-- Memory: Approximately 14 GiB
-- GPU: No NVIDIA GPU
-The environment uses CPU-based simulations for GPU scheduling concepts where appropriate.
-Kubernetes Environment
-- Container runtime: Docker Engine
-- Local Kubernetes: kind
-- Cluster name: ai-reliability-lab
-- Kubernetes context: kind-ai-reliability-lab
-- Topology: Single control-plane node
-- Kubernetes version: v1.34.0
-The existing kind cluster is reused across Kubernetes labs to conserve resources and preserve continuity.
-Slurm / HPC Environment
-- Slurm version: 25.11.2
-- Cluster name: ai-reliability-slurm
-- Partition: cpu
-- Compute nodes: 1
-- Configured CPUs: 2
-- Configured memory: 2048 MiB
-- Partition time limit: 30 minutes
-- Authentication: MUNGE
-Slurm is installed locally, with the controller and compute daemon operating on the same workstation.
+The environment consists of a Lenovo ThinkPad T480 running Ubuntu Linux, a local kind Kubernetes cluster, a Slurm/HPC scheduling environment, Prometheus and Grafana monitoring, and Python and Bash diagnostic tools.
 
-This environment supports repeatable learning exercises but does not reproduce the redundancy, capacity, or GPU hardware of a production AI cluster.
-Phase 1 — Kubernetes Troubleshooting
-Status: Completed
+Git and GitHub provide version control and publication of the completed lab documentation.
 
-Labs: LAB-001 through LAB-004
+## Project Completion
 
-This phase focuses on diagnosing and resolving Kubernetes workload and cluster issues.
+| Category | Completed |
+|---|---:|
+| Kubernetes troubleshooting | 4/4 labs |
+| Advanced Kubernetes scheduling | 3/3 labs |
+| Slurm/HPC troubleshooting | 2/2 labs |
+| Monitoring and observability | 2/2 labs |
+| Reliability automation | 2/2 labs |
+| Customer reliability and capstone | 2/2 labs |
+| **Total** | **15/15 labs** |
 
-Key troubleshooting practices include:
-- Inspecting workloads and pod states.
-- Reading container logs and Kubernetes events.
-- Investigating workload configuration and scheduling.
-- Identifying causes of service degradation.
-- Verifying recovery after corrective actions.
-- Documenting incidents and operational evidence.
-Documentation
-- [LAB-001](incidents/LAB-001/README.md)
-- [LAB-002](incidents/LAB-002/README.md)
-- [LAB-003](incidents/LAB-003/README.md)
-- [LAB-004](incidents/LAB-004/README.md)
-Phase 2 — Advanced Kubernetes Scheduling
-Status: Completed
+**All six project phases are complete.**
 
-Labs: LAB-005 through LAB-007
+## Monitoring and Observability
 
-This phase explores advanced Kubernetes scheduling and AI infrastructure concepts in a CPU-only learning environment.
+Prometheus and Grafana were deployed in the local kind Kubernetes cluster to provide monitoring, alerting, and metrics exploration.
 
-Topics include:
-- Workload resource requests and limits.
-- Scheduling constraints.
-- Node selection and placement.
-- GPU scheduling concepts using simulation.
-- Diagnosing unschedulable workloads.
-- Interpreting scheduler events and resource availability.
-Documentation
-- [LAB-005](incidents/LAB-005/README.md)
-- [LAB-006](incidents/LAB-006/README.md)
-- [LAB-007](incidents/LAB-007/README.md)
-Phase 3 — Slurm / HPC Troubleshooting
-Status: Completed
+### Prometheus — Alert Rules
 
-Labs: LAB-008 and LAB-009
+The screenshot below shows the LAB-011 Prometheus alert rules after the controlled alerting experiment.
 
-This phase introduces Slurm workload management and common HPC troubleshooting workflows.
-LAB-008 — Slurm Batch Jobs and Queue Troubleshooting
-LAB-008 demonstrates:
-- Installing and configuring a local Slurm environment.
-- Verifying MUNGE authentication.
-- Starting and checking Slurm services.
-- Submitting batch jobs.
-- Inspecting partitions, nodes, and queues.
-- Observing resource contention.
-- Distinguishing running jobs from pending jobs.
-A queue-contention experiment demonstrated a job pending with:
-Reason=Resources
-The pending job proceeded after resources became available.
+![Prometheus Alert Rules](assets/prometheus-alert-rules.png)
 
-[Read LAB-008](labs/LAB-008-slurm-batch-jobs-and-queues/README.md)
-LAB-009 — Slurm Failures and Resource Allocation Troubleshooting
-LAB-009 investigates three different failure scenarios.
+The two configured rules are:
 
-Experiment 1: Unschedulable resource request
+- `PrometheusTargetDown` — detects unavailable monitored targets.
+- `Lab011SyntheticFailure` — supports a controlled synthetic alerting test.
 
-A job requested three CPUs from a node configured with two CPUs.
+Both rules are shown in the **Inactive** state in the captured screenshot.
 
-Observed scheduler evidence:
-JobState=PENDING
-Reason=PartitionConfig
-ReqTRES=cpu=3,mem=256M,node=1,billing=3
-The job was cancelled after diagnosis.
+The experiment demonstrated alert-rule configuration, synthetic failure testing, investigation, and validation of the healthy rule state.
 
-Experiment 2: Application execution failure
+[Read LAB-011 — Alerting and Observability Troubleshooting](labs/LAB-011-alerting-and-observability-troubleshooting/README.md)
 
-A batch job successfully received resources but deliberately exited with code 42.
+### Grafana — Metrics Exploration
 
-Observed evidence:
-JobState=FAILED
-Reason=NonZeroExitCode
-ExitCode=42:0
-The application error was also captured in standard error.
+Grafana was configured to use Prometheus as a metrics data source.
 
-Experiment 3: Compute-daemon interruption and recovery
+![Grafana Metrics Exploration](assets/grafana-metrics.png)
 
-A controlled slurmd interruption and recovery procedure was exercised.
+The screenshot shows Grafana Explore querying the Prometheus `up` metric.
 
-Recovery verification confirmed:
-slurmd: active
-State=IDLE
-CPUAlloc=0
-The cluster returned to a healthy state without requiring an explicit node resume.
+The displayed Kubernetes API server and Prometheus target series both report a value of `1` during the captured interval, indicating that those monitored targets were reachable according to Prometheus.
 
-The retained evidence did not establish that the controller marked the node DOWN during the brief interruption.
+[Read LAB-010 — Prometheus and Grafana Monitoring](labs/LAB-010-prometheus-and-grafana-monitoring/README.md)
 
-Additional finding: Slurm accounting storage was disabled in the local environment, limiting historical job accounting.
+## All 15 Labs
 
-[Read LAB-009](labs/LAB-009-slurm-failures-and-resource-allocation/README.md)
-Phase 4 — Monitoring and Observability
-Status: Completed
+### Phase 1 — Kubernetes Troubleshooting
 
-Labs: LAB-010 and LAB-011
+**Status: Complete — 4/4 labs**
 
-This phase established Prometheus and Grafana monitoring in the existing kind Kubernetes cluster and demonstrated a controlled alerting incident.
-LAB-010 — Prometheus and Grafana Monitoring
-LAB-010 implemented:
-- Prometheus metrics collection and target health verification.
-- Kubernetes API server monitoring.
-- Grafana deployment and Prometheus datasource provisioning.
-- Metrics exploration through the Prometheus and Grafana interfaces.
-- Deployment configuration and troubleshooting documentation.
-[Read LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md)
-LAB-011 — Alerting and Observability Troubleshooting
-LAB-011 demonstrated:
-- Configuring and validating Prometheus alert rules.
-- Triggering a controlled synthetic alert and observing the Firing state.
-- Investigating Kubernetes ConfigMap propagation delays.
-- Restoring the healthy rule and reloading Prometheus without a pod restart.
-- Verifying both alerts returned to Inactive with rule health OK.
-- Collecting evidence and creating a reusable Bash health-check script.
-The experiment was synthetic; it did not involve a real infrastructure outage or Alertmanager notification delivery.
+This phase focuses on Kubernetes workload diagnosis, logs, events, resource inspection, and recovery verification.
 
-[Read LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md)
-Phase 5 — Reliability Automation
-Status: Completed — 2 of 2 labs completed
+| Lab | Documentation |
+|---|---|
+| LAB-001 | [View LAB-001](incidents/LAB-001/README.md) |
+| LAB-002 | [View LAB-002](incidents/LAB-002/README.md) |
+| LAB-003 | [View LAB-003](incidents/LAB-003/README.md) |
+| LAB-004 | [View LAB-004](incidents/LAB-004/README.md) |
 
-Labs: LAB-012 and LAB-013
+### Phase 2 — Advanced Kubernetes Scheduling
 
-This phase focuses on reducing repetitive troubleshooting work through read-only Python and Bash diagnostics and structured evidence collection.
-LAB-012 — Python Diagnostic Automation
-Implemented a read-only Python diagnostic tool covering Kubernetes, Slurm, and Prometheus. The tool generates JSON reports, passed nine automated tests, and correctly detected a controlled monitoring connectivity failure.
+**Status: Complete — 3/3 labs**
 
-[Read LAB-012](labs/LAB-012-python-diagnostic-automation/README.md)
-LAB-013 — Bash Health Checks and Evidence Collection
-Implemented read-only Bash health checks for Kubernetes, Slurm, and Prometheus, plus timestamped incident evidence collection with private archives and collection summaries. Healthy and controlled-failure scenarios were validated, and all seven automated tests passed.
+This phase covers resource requests and limits, scheduling constraints, node placement, and GPU scheduling concepts explored through CPU-based simulation.
 
-[Read LAB-013](labs/LAB-013-bash-health-checks-and-evidence-collection/README.md)
-Phase 6 — Customer Reliability and Capstone
-Status: Not started
+| Lab | Documentation |
+|---|---|
+| LAB-005 | [View LAB-005](incidents/LAB-005/README.md) |
+| LAB-006 | [View LAB-006](incidents/LAB-006/README.md) |
+| LAB-007 | [View LAB-007](incidents/LAB-007/README.md) |
 
-Labs: LAB-014 and LAB-015
+### Phase 3 — Slurm / HPC Troubleshooting
 
-This phase will connect infrastructure troubleshooting with customer-facing reliability practices.
-LAB-014 — Customer Incident Communication and RCA
-Planned objectives:
-- Write clear customer incident updates.
-- Distinguish symptoms, impact, and root cause.
-- Document investigation timelines.
-- Produce a structured root cause analysis.
-- Recommend corrective and preventive actions.
-LAB-015 — Integrated AI Infrastructure Reliability Capstone
-The final lab will combine Kubernetes, Slurm, monitoring, automation, and incident communication into an end-to-end troubleshooting scenario.
-Troubleshooting Methodology
-Across the portfolio, incidents follow a consistent operational approach:
-1. Establish a baseline: Check the environment and expected healthy state.
-2. Identify symptoms: Determine what is failing and what is affected.
-3. Collect evidence: Gather logs, events, resource information, and service status.
-4. Form a hypothesis: Identify the most likely failure category.
-5. Test safely: Use controlled experiments and reversible changes.
-6. Apply corrective action: Address the confirmed problem.
-7. Verify recovery: Check both service health and workload behavior.
-8. Document findings: Record evidence, limitations, root cause, and lessons learned.
-This methodology emphasizes reproducibility, safety, and clear communication.
-Common Diagnostic Commands
-Kubernetes
-kubectl config current-context
-kubectl get nodes
-kubectl get pods -A
-kubectl describe pod <pod-name> -n <namespace>
-kubectl logs <pod-name> -n <namespace>
-kubectl get events -A
-Slurm
-sinfo
-sinfo -N -l
-squeue
-scontrol show nodes
-scontrol show job <job-id>
-systemctl is-active munge slurmctld slurmd
-Git
-git status
-git diff --check
-git log --oneline -5
-git push origin main
-Commands are examples. Replace placeholders with the relevant resource names.
-Repository Organization
-The repository contains incident documentation, lab guides, reusable scripts, Slurm job definitions, and infrastructure configuration.
+**Status: Complete — 2/2 labs**
 
-Key directories include:
+This phase demonstrates Slurm job scheduling, queue investigation, resource contention, application failures, and compute-daemon recovery validation.
+
+| Lab | Focus | Documentation |
+|---|---|---|
+| LAB-008 | Slurm Batch Jobs and Queues | [View LAB-008](labs/LAB-008-slurm-batch-jobs-and-queues/README.md) |
+| LAB-009 | Slurm Failures and Resource Allocation | [View LAB-009](labs/LAB-009-slurm-failures-and-resource-allocation/README.md) |
+
+**Selected findings:**
+
+- Diagnosed a pending Slurm job with `Reason=Resources`.
+- Investigated a three-CPU request on a two-CPU compute node.
+- Captured an application failure with exit code `42`.
+- Performed a controlled compute-daemon interruption and verified subsequent service and node health.
+
+### Phase 4 — Monitoring and Observability
+
+**Status: Complete — 2/2 labs**
+
+This phase demonstrates monitoring deployment, metrics exploration, Prometheus alert rules, and controlled alerting investigation.
+
+| Lab | Focus | Documentation |
+|---|---|---|
+| LAB-010 | Prometheus and Grafana Monitoring | [View LAB-010](labs/LAB-010-prometheus-and-grafana-monitoring/README.md) |
+| LAB-011 | Alerting and Observability Troubleshooting | [View LAB-011](labs/LAB-011-alerting-and-observability-troubleshooting/README.md) |
+
+### Phase 5 — Reliability Automation
+
+**Status: Complete — 2/2 labs**
+
+This phase focuses on reducing repetitive troubleshooting work using Python and Bash.
+
+| Lab | Focus | Documentation |
+|---|---|---|
+| LAB-012 | Python Diagnostic Automation | [View LAB-012](labs/LAB-012-python-diagnostic-automation/README.md) |
+| LAB-013 | Bash Health Checks and Evidence Collection | [View LAB-013](labs/LAB-013-bash-health-checks-and-evidence-collection/README.md) |
+
+**Implemented tools:**
+
+- Read-only Python diagnostics for Kubernetes, Slurm, and Prometheus.
+- Structured JSON diagnostic reports.
+- Bash infrastructure health checks with meaningful exit codes.
+- Timestamped incident evidence collection.
+- Automated tests for healthy and controlled-failure scenarios.
+
+**Validation:** Nine Python tests and seven Bash tests passed during their respective lab exercises.
+
+### Phase 6 — Customer Reliability and Capstone
+
+**Status: Complete — 2/2 labs**
+
+This phase connects infrastructure troubleshooting with customer-facing reliability engineering practices.
+
+| Lab | Focus | Documentation |
+|---|---|---|
+| LAB-014 | Customer Incident Communication and Root Cause Analysis | [View LAB-014](labs/LAB-014-customer-incident-communication-and-rca/README.md) |
+| LAB-015 | Integrated AI Infrastructure Reliability Capstone | [View LAB-015](labs/LAB-015-integrated-reliability-capstone/README.md) |
+
+LAB-014 demonstrates simulated customer updates, investigation timelines, root cause analysis, and corrective-action recommendations.
+
+LAB-015 brings together Kubernetes, Slurm, monitoring, automation, technical evidence, and incident communication.
+
+## Featured Capstone — LAB-015
+
+**Scenario:** `LAB-015-SIM-001`
+
+**Incident type:** Simulated monitoring connectivity failure in an AI compute environment.
+
+The investigation examined a fictional customer report of unavailable monitoring information.
+
+### Investigation Process
+
+1. Established Kubernetes, Slurm, and monitoring baselines.
+2. Verified the existing infrastructure state.
+3. Introduced a controlled monitoring connectivity failure.
+4. Collected health-check output and exit codes.
+5. Investigated the affected failure domain.
+6. Validated the actual Prometheus readiness endpoint.
+7. Prepared an incident report and simulated customer updates.
+
+### Results
+
+| Component | Observed result |
+|---|---|
+| Kubernetes | Control-plane node Ready |
+| Slurm | Controller UP; compute node IDLE |
+| Prometheus deployment | 1/1 available |
+| Grafana deployment | 1/1 available |
+| Controlled health check | 6 passed, 1 failed |
+| Controlled health-check exit code | 1 |
+| Actual Prometheus readiness | `Prometheus Server is Ready.` |
+| Infrastructure recovery | Not required |
+
+**Root cause:** The diagnostic script was deliberately pointed at an unreachable monitoring endpoint.
+
+The evidence did not establish a real Prometheus outage, Kubernetes failure, Slurm failure, or actual customer impact.
+
+### Capstone Documentation
+
+- [LAB-015 Overview](labs/LAB-015-integrated-reliability-capstone/README.md)
+- [Investigation Runbook](labs/LAB-015-integrated-reliability-capstone/investigation-runbook.md)
+- [Incident Report](labs/LAB-015-integrated-reliability-capstone/incident-report.md)
+- [Simulated Customer Update](labs/LAB-015-integrated-reliability-capstone/customer-update.md)
+- [Kubernetes Baseline](labs/LAB-015-integrated-reliability-capstone/evidence/01-kubernetes-baseline.txt)
+- [Slurm Baseline](labs/LAB-015-integrated-reliability-capstone/evidence/02-slurm-baseline.txt)
+- [Monitoring Baseline](labs/LAB-015-integrated-reliability-capstone/evidence/03-monitoring-baseline.txt)
+- [Controlled Failure Evidence](labs/LAB-015-integrated-reliability-capstone/evidence/04-controlled-monitoring-failure.txt)
+- [Validation Summary](labs/LAB-015-integrated-reliability-capstone/evidence/05-validation-summary.txt)
+
+## Technical Environment
+
+The project runs on a local CPU-only workstation.
+
+| Component | Configuration |
+|---|---|
+| Workstation | Lenovo ThinkPad T480 |
+| Operating system | Ubuntu Linux |
+| Processor | Intel Core i7-8550U |
+| Logical CPUs | 8 |
+| Memory | Approximately 14 GiB |
+| NVIDIA GPU | None |
+| Kubernetes | kind, v1.34.0 |
+| Kubernetes context | `kind-ai-reliability-lab` |
+| Slurm | 25.11.2 |
+| Slurm partition | `cpu` |
+| Slurm compute resources | 2 CPUs, 2048 MiB |
+| Monitoring | Prometheus 3.5.0, Grafana 12.1.0 |
+| Automation | Python and Bash |
+| Version control | Git and GitHub |
+
+The environment supports repeatable training exercises but does not reproduce the scale, redundancy, or GPU hardware of a production AI cluster.
+
+## Diagnostic Automation
+
+The repository includes reusable diagnostic and evidence-collection scripts.
+
+| Tool | Purpose |
+|---|---|
+| [Python diagnostic tool](scripts/python/lab-012/diagnose.py) | Kubernetes, Slurm, and Prometheus diagnostics |
+| [Bash health check](scripts/bash/lab-013/check-infrastructure-health.sh) | Infrastructure health validation |
+| [Evidence collector](scripts/bash/lab-013/collect-incident-evidence.sh) | Timestamped incident evidence collection |
+| [Python tests](tests/lab-012/test_diagnose.py) | Diagnostic tool validation |
+| [Bash tests](tests/lab-013/test-bash-automation.sh) | Automation behavior validation |
+
+## Troubleshooting Methodology
+
+The engineering workflow used throughout the project is:
+
+1. **Baseline:** Establish the expected healthy state.
+2. **Diagnose:** Collect logs, events, metrics, and service information.
+3. **Isolate:** Identify the affected infrastructure or application failure domain.
+4. **Test:** Perform safe, controlled experiments.
+5. **Validate:** Confirm the observed outcome and relevant service health.
+6. **Communicate:** Document findings, limitations, and next actions.
+
+## Repository Structure
+
+```text
 ai-cluster-reliability-lab/
 ├── README.md
+├── assets/
+│   ├── infrastructure-architecture.png
+│   ├── prometheus-alert-rules.png
+│   └── grafana-metrics.png
 ├── incidents/
-│   ├── LAB-001/
-│   ├── LAB-002/
-│   ├── LAB-003/
-│   ├── LAB-004/
-│   ├── LAB-005/
-│   ├── LAB-006/
-│   └── LAB-007/
+│   └── LAB-001 through LAB-007/
 ├── labs/
-│   ├── LAB-008-slurm-batch-jobs-and-queues/
-│   ├── LAB-009-slurm-failures-and-resource-allocation/
-│   ├── LAB-010-prometheus-and-grafana-monitoring/
-│   ├── LAB-011-alerting-and-observability-troubleshooting/
-│   ├── LAB-012-python-diagnostic-automation/
-│   └── LAB-013-bash-health-checks-and-evidence-collection/
+│   └── LAB-008 through LAB-015/
+├── kubernetes/
+├── monitoring/
 ├── scripts/
-│   └── slurm/
-│       └── lab-009/
-│           ├── collect-baseline.sh
-│           ├── node-failure-preflight.sh
-│           ├── recover-compute-node.sh
-│           ├── test-failing-job.sh
-│           ├── test-node-interruption.sh
-│           └── test-unschedulable-job.sh
-└── slurm/
-    └── jobs/
-        └── lab-009/
-            └── failing-job.sh
-This is a simplified view of the repository, not an exhaustive file listing.
+├── slurm/
+└── tests/
+```
 
-Generated Slurm output files are excluded from version control.
-Safety and Operational Boundaries
-This portfolio is built in a local learning environment.
-- Infrastructure experiments are designed to be repeatable and controlled.
-- Existing Kubernetes and Slurm environments are reused where possible.
-- Destructive operations are avoided unless specifically required and documented.
-- Recovery procedures are prepared before fault-injection experiments.
-- Sensitive authentication material, including MUNGE keys, must not be committed.
-- Generated job output and temporary evidence should be reviewed before publication.
-- CPU-based simulations are identified as simulations rather than real GPU experiments.
-- Observed evidence is distinguished from expected or hypothetical behavior.
-Skills Demonstrated
-The completed and planned labs collectively target skills relevant to Customer Reliability Engineering and AI Infrastructure operations:
-- Linux troubleshooting and service management.
-- Kubernetes workload diagnostics.
-- Kubernetes scheduling and resource allocation.
-- Slurm batch scheduling and queue management.
-- HPC workload failure diagnosis.
-- Compute-node service recovery.
-- Prometheus and Grafana observability.
-- Python and Bash automation.
-- Incident investigation and root cause analysis.
-- Customer-facing technical communication.
-- Operational documentation and reproducible troubleshooting.
-Skills from upcoming labs will be demonstrated as those labs are completed.
-Current Milestone
-Completed: LAB-001 through LAB-013
+The diagram above is a simplified directory view. Individual labs contain their own documentation, configuration, evidence, and supporting resources.
 
-Portfolio progress: 13/15 labs — 86.7%
+## Engineering Skills Demonstrated
 
-Completed phases: Kubernetes Troubleshooting, Advanced Kubernetes Scheduling, Slurm/HPC Troubleshooting, Monitoring and Observability, and Reliability Automation.
+- Linux infrastructure troubleshooting.
+- Kubernetes workload diagnostics and scheduling.
+- Slurm/HPC job management and failure investigation.
+- Prometheus monitoring and alert-rule configuration.
+- Grafana metrics visualization.
+- Python and Bash diagnostic automation.
+- Automated testing and evidence collection.
+- Failure-domain isolation and root cause analysis.
+- Controlled infrastructure experiments.
+- Technical incident reporting.
+- Customer-facing incident communication.
+- Operational runbook development.
+- Git-based project documentation.
 
-Latest completed implementation: LAB-013 — Bash Health Checks and Evidence Collection.
+## Safety and Project Scope
 
-Next implementation: LAB-014 — Customer Incident Communication and Root Cause Analysis.
+This is a local engineering learning portfolio, not a production customer environment.
 
-The remaining two labs will cover customer incident communication and the integrated reliability capstone.
-Repository
-AI Cluster Reliability Lab
+- Controlled failures were introduced for training and validation.
+- Synthetic alerts and simulated customer incidents are explicitly identified.
+- GPU scheduling concepts were explored without physical GPU hardware.
+- Observed results are distinguished from hypotheses and expected outcomes.
+- No actual customer impact is claimed.
 
-https://github.com/komolafetemitope14/ai-cluster-reliability-lab
+## Project Completion
+
+**15/15 labs completed. 6/6 phases completed.**
+
+The AI Cluster Reliability Lab provides a documented, reproducible portfolio demonstrating practical infrastructure reliability engineering across Kubernetes, Slurm, monitoring, automation, incident investigation, and customer communication.
+
+**GitHub repository:** https://github.com/komolafetemitope14/ai-cluster-reliability-lab
