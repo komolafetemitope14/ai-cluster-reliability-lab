@@ -1,0 +1,27 @@
+LAB-015 — Prometheus Recovery and Validation
+Scenario: LAB-015-SIM-001
+Validation type: Real Prometheus service readiness
+Collected at: 2026-11-20T09:39:16+01:00
+
+=== Prometheus deployment availability ===
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+prometheus   1/1     1            1           24h
+Exit status: 0
+
+=== Prometheus pod readiness ===
+NAME                          READY   STATUS    RESTARTS   AGE
+prometheus-76bc799ddb-lj54m   1/1     Running   0          14h
+Exit status: 0
+
+=== Prometheus HTTP readiness ===
+Prometheus Server is Ready.
+Exit status: 0
+
+=== Slurm controller validation ===
+Slurmctld(primary) at enianyole-ThinkPad-T480 is UP
+Exit status: 0
+
+=== Kubernetes node validation ===
+NAME                               STATUS   ROLES           AGE   VERSION
+ai-reliability-lab-control-plane   Ready    control-plane   43h   v1.34.0
+Exit status: 0

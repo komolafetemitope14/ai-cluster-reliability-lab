@@ -1,0 +1,32 @@
+LAB-015 — Controlled Monitoring Failure
+Scenario: LAB-015-SIM-001
+Test type: Simulated unreachable Prometheus endpoint
+Collected at: 2026-11-20T09:37:06+01:00
+
+Injected diagnostic endpoint: http://127.0.0.1:19091
+Expected result: Prometheus connectivity failure
+
+
+=== LAB-013 Infrastructure Health Check ===
+Timestamp (UTC): 2026-11-20T08:37:06Z
+
+=== Kubernetes ===
+PASS: Kubernetes context: kind-ai-reliability-lab
+PASS: All Kubernetes nodes Ready
+
+=== Slurm ===
+PASS: Service active: munge
+PASS: Service active: slurmctld
+PASS: Service active: slurmd
+PASS: Slurm node enianyole-ThinkPad-T480: idle
+
+=== Prometheus ===
+FAIL: Prometheus endpoint unreachable: http://127.0.0.1:19091
+
+=== Summary ===
+Passed checks: 6
+Failed checks: 1
+Overall status: FAIL
+
+Health-check exit status: 1
+Controlled failure detected: YES

@@ -1,0 +1,34 @@
+LAB-015 — Monitoring Baseline Evidence
+Scenario: LAB-015-SIM-001
+Evidence type: Newly collected local diagnostic output
+Collected at: 2026-11-19T23:57:17+01:00
+
+=== Monitoring deployments ===
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                   SELECTOR
+grafana      1/1     1            1           12h   grafana      grafana/grafana:12.1.0   app=grafana
+prometheus   1/1     1            1           14h   prometheus   prom/prometheus:v3.5.0   app=prometheus
+Exit status: 0
+
+=== Monitoring pods ===
+NAME                          READY   STATUS    RESTARTS   AGE     IP            NODE                               NOMINATED NODE   READINESS GATES
+grafana-596f55dbd9-8dzxb      1/1     Running   0          12h     10.244.0.21   ai-reliability-lab-control-plane   <none>           <none>
+prometheus-76bc799ddb-lj54m   1/1     Running   0          4h40m   10.244.0.22   ai-reliability-lab-control-plane   <none>           <none>
+Exit status: 0
+
+=== Monitoring services ===
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+grafana      ClusterIP   10.96.145.182   <none>        3000/TCP   12h   app=grafana
+prometheus   ClusterIP   10.96.247.9     <none>        9090/TCP   14h   app=prometheus
+Exit status: 0
+
+=== Prometheus endpoints ===
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME         ENDPOINTS          AGE
+grafana      10.244.0.21:3000   12h
+prometheus   10.244.0.22:9090   14h
+Exit status: 0
+
+=== Prometheus pod readiness ===
+NAME                          READY   STATUS    RESTARTS   AGE
+prometheus-76bc799ddb-lj54m   1/1     Running   0          4h40m
+Exit status: 0

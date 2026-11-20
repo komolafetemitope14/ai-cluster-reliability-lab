@@ -1,0 +1,40 @@
+LAB-015 — Slurm Baseline Evidence
+Scenario: LAB-015-SIM-001
+Evidence type: Newly collected local diagnostic output
+Collected at: 2026-11-19T23:54:59+01:00
+
+=== Slurm version ===
+slurm-wlm 25.11.2
+Exit status: 0
+
+=== Scheduler and partitions ===
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+cpu*         up      30:00      1   idle enianyole-ThinkPad-T480
+Exit status: 0
+
+=== Job queue ===
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+Exit status: 0
+
+=== Controller responsiveness ===
+Slurmctld(primary) at enianyole-ThinkPad-T480 is UP
+Exit status: 0
+
+=== Compute node details ===
+NodeName=enianyole-ThinkPad-T480 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=2 CPUTot=2 CPULoad=0.99
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=(null)
+   NodeAddr=enianyole-ThinkPad-T480 NodeHostName=enianyole-ThinkPad-T480 Version=25.11.2
+   OS=Linux 7.0.0-43-generic #43-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:25:25 UTC 2026 
+   RealMemory=2048 AllocMem=0 FreeMem=1137 Sockets=2 Boards=1
+   State=IDLE ThreadsPerCore=1 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=cpu 
+   BootTime=2026-11-13T09:39:17 SlurmdStartTime=2026-11-19T00:03:51
+   LastBusyTime=2026-11-18T23:55:10 ResumeAfterTime=None
+   CfgTRES=cpu=2,mem=2G,billing=2
+   AllocTRES=
+   CurrentWatts=0 AveWatts=0
+
+Exit status: 0
